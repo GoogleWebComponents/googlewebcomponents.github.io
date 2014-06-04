@@ -1,0 +1,30 @@
+{
+  "name": "GoogleWebComponents",
+  "homepage": "http://googlewebcomponents.github.io/",
+  "description": "Web components to interact with Google services and APIs",
+  "main": "index.html",
+  "authors": [
+    "Eric Bidelman"
+  ],
+  "license": "Apache2",
+  "version": "0.0.1",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "../"
+  ],
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "google"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-icons": "Polymer/core-icons#master"
+  }
+}
