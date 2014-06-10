@@ -79,8 +79,7 @@ var template = document.querySelector('#t');
 template.elements = ELEMENTS;
 
 template.getHost = function(org) {
-  return location.hostname == 'localhost' ?
-                              'http://' + org + '.github.io' : '';
+  return 'http://' + org + '.github.io';
 }
 
 template.loadDemo = function(e, detail, sender) {
