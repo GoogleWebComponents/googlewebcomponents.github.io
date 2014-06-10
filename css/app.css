@@ -47,6 +47,7 @@ label {
 }
 
 article {
+  -webkit-flex: 1; /* Safari 7.0.4*/
   flex: 1;
   border-radius: 3px;
   background: white;
@@ -54,6 +55,7 @@ article {
 }
 
 main {
+  display: -webkit-flex; /* Safari 7.0.4*/
   display: flex;
   height: 600px;
 }
@@ -65,22 +67,31 @@ main {
 }
 
 #demo {
+  display: -webkit-flex; /* Safari 7.0.4*/
   display: flex;
   align-items: center;
+  -webkit-justify-content: center; /* Safari 7.0.4 */
   justify-content: center;
+  -webkit-flex: 2; /* Safari 7.0.4*/
   flex: 2;
   text-transform: uppercase;
 }
 
 section {
+  display: -webkit-flex; /* Safari 7.0.4*/
   display: flex;
+  -webkit-align-items: center; /* Safari 7.0.4 */
   align-items: center;
+  -webkit-justify-content: space-between; /* Safari 7.0.4 */
   justify-content: space-between;
 }
 
 footer {
+  display: -webkit-flex; /* Safari 7.0.4*/
   display: flex;
+  -webkit-align-items: center; /* Safari 7.0.4 */
   align-items: center;
+  -webkit-justify-content: flex-start; /* Safari 7.0.4 */
   justify-content: flex-start;
   margin-top: 1em;
   color: #aaa;
@@ -102,4 +113,5 @@ iframe {
   border: none;
   width: 100%;
   height: -webkit-fill-available;
+  height: fill-available;
 }
