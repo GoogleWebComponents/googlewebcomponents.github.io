@@ -25,11 +25,11 @@
 <article id="list">
   <template repeat="{{e,i in elements}}">
     <section>
-      <h3>&lt;{{e}}></h3>
+      <h3>&lt;{{e.repo}}></h3>
       <div>
         <label class="google green" on-tap="{{loadDemo}}">Demo</label>
         <label class="google red" on-tap="{{loadDocs}}">Docs</label>
-        <label class="google blue"><a href="https://github.com/GoogleWebComponents/{{e}}">Github</a></label>
+        <label class="google blue"><a href="https://github.com/{{e.org}}/{{e.repo}}">Github</a></label>
       </div>
     </section>
   </template>
@@ -52,34 +52,46 @@
 (function() {
 
 var ELEMENTS = [
-  'google-calendar',
-  'google-hangout-button',
-  'google-sheets',
-  'google-url-shortener',
-  'google-drive',
-  'google-signin',
-  'google-chart',
-  'google-streetview-pano',
-  'google-youtube',
+  {org: 'PolymerLabs', repo: 'google-map'},
+  {org: 'PolymerLabs', repo: 'google-apis'},
+  {org: 'GoogleWebComponents', repo: 'google-calendar'},
+  {org: 'GoogleWebComponents', repo: 'google-hangout-button'},
+  {org: 'GoogleWebComponents', repo: 'google-sheets'},
+  {org: 'GoogleWebComponents', repo: 'google-url-shortener'},
+  {org: 'GoogleWebComponents', repo: 'google-drive'},
+  {org: 'GoogleWebComponents', repo: 'google-signin'},
+  {org: 'GoogleWebComponents', repo: 'google-chart'},
+  {org: 'GoogleWebComponents', repo: 'google-streetview-pano'},
+  {org: 'GoogleWebComponents', repo: 'google-youtube'},
 ];
-ELEMENTS.sort();
-
-var HOST = location.hostname == 'localhost' ?
-                                'http://googlewebcomponents.github.io' : '';
+ELEMENTS.sort(function (a, b) {
+  if (a.repo > b.repo) {
+    return 1;
+  }
+  if (a.repo < b.repo) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+});
 
 var template = document.querySelector('#t');
 template.elements = ELEMENTS;
-template.host = HOST;
+
+template.getHost = function(org) {
+  return location.hostname == 'localhost' ?
+                              'http://' + org + '.github.io' : '';
+}
 
 template.loadDemo = function(e, detail, sender) {
   var element = sender.templateInstance.model.e;
-  this.iframeSrc = this.host + '/' + element + '/components/' +
-                   element + '/demo.html';
+  this.iframeSrc = this.getHost(element.org) + '/' + element.repo +
+                   '/components/' + element.repo + '/demo.html';
 };
 
 template.loadDocs = function(e, detail, sender) {
   var element = sender.templateInstance.model.e;
-  this.iframeSrc = this.host + '/' + element;
+  this.iframeSrc = this.getHost(element.org) + '/' + element.repo;
 };
 
 })();
