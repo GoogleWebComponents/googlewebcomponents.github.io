@@ -17,12 +17,18 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
-header {
+code, pre {
+  font-family: 'Inconsolata', 'Source Code Pro', courier;
+  margin: 0;
+}
+
+body > header {
   margin-bottom: 2.5em;
 }
 
 header h1,
-header h2 {
+header h2,
+header h3 {
   margin: 0;
 }
 
@@ -46,12 +52,22 @@ label {
   cursor: pointer;
 }
 
-article {
+#demo, section {
   -webkit-flex: 1; /* Safari 7.0.4*/
   flex: 1;
   border-radius: 3px;
   background: white;
   box-shadow: 0 0 3px #ccc;
+}
+
+section {
+  padding: 1em;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+section header {
+  margin-bottom: 1.5em;
 }
 
 main {
@@ -61,7 +77,7 @@ main {
 }
 
 #list {
-  padding: 0 1em;
+  padding: 4px;
   overflow: auto;
   margin-right: 1em;
 }
@@ -75,9 +91,10 @@ main {
   -webkit-flex: 2; /* Safari 7.0.4*/
   flex: 2;
   text-transform: uppercase;
+  margin-top: 4px; /* ensure box-shadow doesnt get clipped. */
 }
 
-section {
+section header {
   display: -webkit-flex; /* Safari 7.0.4*/
   display: flex;
   -webkit-align-items: center; /* Safari 7.0.4 */
@@ -114,4 +131,44 @@ iframe {
   width: 100%;
   height: -webkit-fill-available;
   height: fill-available;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    padding: 3px;
+  }
+  body > header {
+    margin-bottom: 15px;
+  }
+  h1 {
+    font-size: 7vw;
+  }
+  section h2 {
+    font-size: 4vw;
+  }
+  main {
+    flex-direction: column;
+    height: 100%;
+  }
+  #list {
+    -webkit-order: 2;
+    order: 2;
+    margin: 1em 0 0 0;
+    padding: 4px;
+  }
+  #demo {
+    -webkit-order: 1;
+    order: 1;
+    -webkit-flex: 1 0 200px;
+    flex: 1 0 200px;
+    overflow: auto;
+    margin: 4px;
+
+  }
+  pre {
+    font-size: 12px;
+  }
+  iframe {
+    height: auto;
+  }
 }

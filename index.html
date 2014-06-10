@@ -25,12 +25,15 @@
 <article id="list">
   <template repeat="{{e,i in elements}}">
     <section>
-      <h3>&lt;{{e.repo}}></h3>
-      <div>
-        <label class="google green" on-tap="{{loadDemo}}">Demo</label>
-        <label class="google red" on-tap="{{loadDocs}}">Docs</label>
-        <label class="google blue"><a href="https://github.com/{{e.org}}/{{e.repo}}">Github</a></label>
-      </div>
+      <header>
+        <h2><code>&lt;{{e.repo}}></code></h2>
+        <div>
+          <label class="google green" on-tap="{{loadDemo}}">Demo</label>
+          <label class="google red" on-tap="{{loadDocs}}">Docs</label>
+          <label class="google blue"><a href="https://github.com/{{e.org}}/{{e.repo}}">Github</a></label>
+        </div>
+      </header>
+      <pre>bower install {{e.org}}/{{e.repo}} [--save]</pre>
     </section>
   </template>
 </article>
