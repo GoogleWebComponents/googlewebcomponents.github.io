@@ -2,8 +2,8 @@
 <!-- Copyright (c) 2014 Google Inc. All rights reserved. -->
 <html>
 <head>
-  <title>Google Web Components Kit</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700">
+  <title>Google Web Components</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato|Source+Code+Pro:400,600">
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/platform/platform.js"></script>
   <link rel="import" href="bower_components/polymer/polymer.html">
@@ -13,28 +13,20 @@
 </head>
 <body unresolved>
 
-<header class="header">
-  <h1>Google Web Components Kit</h1>
+<header>
+  <h1>Google Web Components</h1>
   <div>A collection of web components for Google APIs &amp; services. Built with <a href="http://www.polymer-project.org">Polymer</a>.</div>
 
   <div class="social-container">
-    <ul class="social-buttons">
-      <li class="btn-gplus">
+    <ul class="social-buttons" layout horizontal center-justified>
+      <li>
         <div class="g-plusone" data-size="medium" data-href="http://googlewebcomponents.github.io/"></div>
-        <script type="text/javascript">
-          (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/platform.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-          })();
-        </script>
       </li>
-      <li class="btn-tweet">
+      <li>
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://googlewebcomponents.github.io/" data-text="Google Web Components Kit - A collection of web components for Google APIs & services">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </li>
-      <li class="btn-fb">
-        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgooglewebcomponents.github.io%2F&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=1425740347639442" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgooglewebcomponents.github.io&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=2395139037" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
       </li>
     </ul>
   </div>
@@ -50,8 +42,8 @@
       <header>
         <h2><code>&lt;{{e.repo}}></code></h2>
         <div>
-          <label class="google green" on-tap="{{loadDemo}}">Demo</label>
-          <label class="google red" on-tap="{{loadDocs}}">Docs</label>
+          <label class="google red" on-tap="{{loadDemo}}">Demo</label>
+          <label class="google yellow" on-tap="{{loadDocs}}">Docs</label>
           <label class="google blue"><a href="https://github.com/{{e.org}}/{{e.repo}}">Github</a></label>
         </div>
       </header>
@@ -122,15 +114,25 @@ template.loadDocs = function(e, detail, sender) {
 };
 
 })();
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-51314200-1', 'auto');
-  ga('send', 'pageview');
+// G+
+(function() {
+  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+  po.src = 'https://apis.google.com/js/platform.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+
+// Twitter
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+// Analytics
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-51314200-1', 'auto');
+ga('send', 'pageview');
 </script>
 </body>
 </html>

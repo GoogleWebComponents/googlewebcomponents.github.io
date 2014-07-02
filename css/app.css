@@ -19,31 +19,22 @@ h1, h2, h3 {
 }
 
 code, pre {
-  font-family: 'Inconsolata', 'Source Code Pro', courier;
+  font-family: 'Source Code Pro', 'Inconsolata', courier;
   margin: 0;
 }
 
-.header {
-  background: #16a085;
+body > header {
+  background: rgb(15, 167, 88);
   margin-bottom: 2.5em;
   padding: 40px 0 45px;
   text-align: center;
-}
-
-.header h1 {
   color: #fff;
-  font-size: 48px;
-}
-
-header h1,
-header h2,
-header h3 {
-  margin: 0;
-}
-
-header div {
-  color: #bdc3c7;
   font-size: 20px;
+}
+
+body > header h1 {
+  font-size: 50px;
+  margin-bottom: 5px;
 }
 
 a {
@@ -106,16 +97,11 @@ main {
 }
 
 .social-container {
-  margin-top: 15px;
+  margin-top: 1em;
 }
 
 .social-buttons {
   list-style: none;
-  margin-left: 15%;
-}
-
-.social-buttons li {
-  display: inline-block;
 }
 
 section header {
@@ -158,17 +144,15 @@ iframe {
 }
 
 @media only screen and (max-width: 800px) {
-  body {
-    padding: 3px;
-  }
   body > header {
     margin-bottom: 15px;
+    font-size: 3.5vw;
   }
   h1 {
-    font-size: 7vw;
+    font-size: 7vw !important;
   }
   section h2 {
-    font-size: 4vw;
+    font-size: 4vw !important;
   }
   main {
     flex-direction: column;
