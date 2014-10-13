@@ -55,7 +55,7 @@
         <h2><code>&lt;{{e.repo}}></code></h2>
         <div>
           <label class="google red" on-tap="{{loadDemo}}">Demo</label>
-          <label class="google yellow" on-tap="{{loadDocs}}">Docs</label>
+          <label class="google yellow"><a href="/{{e.repo}}">Docs</a></label>
           <label class="google blue"><a href="https://github.com/{{e.org}}/{{e.repo}}">Github</a></label>
         </div>
       </header>
@@ -119,11 +119,6 @@ template.loadDemo = function(e, detail, sender) {
   var element = sender.templateInstance.model.e;
   this.iframeSrc = this.getHost(element.org) + '/' + element.repo +
                    '/components/' + element.repo + '/demo.html';
-};
-
-template.loadDocs = function(e, detail, sender) {
-  var element = sender.templateInstance.model.e;
-  this.iframeSrc = this.getHost(element.org) + '/' + element.repo;
 };
 
 })();
