@@ -27,6 +27,7 @@
     "facebook-button": "~0.1.5",
     "twitter-button": "~0.1.7",
     "gplus-elements": "~0.2.1",
+    "github-button": "~0.1.5",
     "polymer": "Polymer/polymer#^0.5.1",
     "core-icons": "Polymer/core-icons#^0.5.1"
   }
