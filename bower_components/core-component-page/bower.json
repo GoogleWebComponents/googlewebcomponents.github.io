@@ -2,7 +2,7 @@
   "name": "core-component-page",
   "private": true,
   "dependencies": {
-    "platform": "Polymer/platform#master",
+    "webcomponentsjs": "Polymer/webcomponentsjs#master",
     "polymer": "Polymer/polymer#master"
   }
 }
