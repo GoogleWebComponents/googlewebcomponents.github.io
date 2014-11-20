@@ -24,7 +24,7 @@
     "google"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#master",
-    "core-icons": "Polymer/core-icons#master"
+    "polymer": "Polymer/polymer#^0.5.1",
+    "core-icons": "Polymer/core-icons#^0.5.1"
   }
 }

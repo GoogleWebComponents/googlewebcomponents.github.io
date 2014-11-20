@@ -10,13 +10,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
   <title>core-icon</title>
-  <script src="../platform/platform.js"></script>
+  <script src="../webcomponentsjs/webcomponents.js"></script>
   <link rel="import" href="../core-icons/core-icons.html">
   <link rel="import" href="core-icon.html">
   
   <style>
     segment {
       min-width: 200px;
+    }
+
+    core-icon.big {
+      height: 128px;
+      width: 128px;
     }
   </style>
 </head>
@@ -29,6 +34,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
   </div>
   <core-iconset id="meta"></core-iconset>
+  <div hidden?="{{!$.meta.metaData.icons.iconNames}}">
+    Sized icon:
+    <core-icon class="big" icon="accessibility"></core-icon>
+  </div>
 </template>
 
 </body>
