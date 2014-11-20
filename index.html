@@ -18,6 +18,9 @@
   <link rel="import" href="bower_components/polymer/polymer.html">
   <link rel="import" href="bower_components/core-icons/core-icons.html">
   <link rel="import" href="bower_components/core-icon/core-icon.html">
+  <link rel="import" href="bower_components/facebook-button/dist/facebook-button.html">
+  <link rel="import" href="bower_components/twitter-button/dist/twitter-button.html">
+  <link rel="import" href="bower_components/gplus-elements/dist/gplus-one.html">
 
   <base target="_blank"/> <!-- make all links open in new tab -->
 
@@ -31,14 +34,14 @@
 
   <div class="social-container">
     <ul class="social-buttons" layout horizontal center-justified>
-      <li>
-        <div class="g-plusone" data-size="medium" data-href="http://googlewebcomponents.github.io/"></div>
+      <li class="social-item tweet-btn">
+          <twitter-button type="share" href="http://googlewebcomponents.github.io/" height="20" width="100" text="Google Web Components Kit - A collection of web components for Google APIs & services"></twitter-button>
       </li>
-      <li>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://googlewebcomponents.github.io/" data-text="Google Web Components Kit - A collection of web components for Google APIs & services">Tweet</a>
+      <li class="social-item fb-btn">
+          <facebook-button href="http://googlewebcomponents.github.io/" layout="button_count" height="20" width="90"></facebook-button>
       </li>
-      <li>
-        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgooglewebcomponents.github.io&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=2395139037" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+      <li class="social-item gplus-btn">
+          <gplus-one size="medium" href="http://googlewebcomponents.github.io/"></gplus-one>
       </li>
     </ul>
   </div>

@@ -102,6 +102,13 @@ main {
 
 .social-buttons {
   list-style: none;
+  text-align: center;
+  height: 20px;
+}
+
+.social-item {
+  display: inline-block;
+  max-width: 100px;
 }
 
 section header {
