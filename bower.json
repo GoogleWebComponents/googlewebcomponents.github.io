@@ -7,7 +7,7 @@
     "Eric Bidelman"
   ],
   "license": "Apache2",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": false,
   "ignore": [
     "**/.*",
@@ -24,7 +24,7 @@
     "google"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.1",
-    "core-icons": "Polymer/core-icons#^0.5.1"
+    "polymer": "Polymer/polymer#^1.0.3",
+    "iron-icons": "PolymerElements/iron-icons#^1.0.0"
   }
 }

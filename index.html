@@ -13,11 +13,12 @@
 
   <link rel="stylesheet" href="css/app.css">
 
-  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
   <link rel="import" href="bower_components/polymer/polymer.html">
-  <link rel="import" href="bower_components/core-icons/core-icons.html">
-  <link rel="import" href="bower_components/core-icon/core-icon.html">
+  <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+  <link rel="import" href="bower_components/iron-icon/iron-icon.html">
 
   <base target="_blank"/> <!-- make all links open in new tab -->
 
@@ -30,7 +31,7 @@
   <div>A collection of web components for Google APIs &amp; services. Built with <a href="http://www.polymer-project.org">Polymer</a>.</div>
 
   <div class="social-container">
-    <ul class="social-buttons" layout horizontal center-justified>
+    <ul class="social-buttons layout horizontal center-justified">
       <li>
         <div class="g-plusone" data-size="medium" data-href="http://googlewebcomponents.github.io/"></div>
       </li>
@@ -44,33 +45,33 @@
   </div>
 </header>
 
-<template id="t" is="auto-binding">
-
 <main>
 
+<template id="t" is="dom-bind">
+
 <article id="list">
-  <template repeat="{{e,i in elements}}">
+  <template is="dom-repeat" items="{{elements}}" as="e">
     <section>
       <header>
-        <h2><code>&lt;{{e.repo}}></code></h2>
+        <h2>&lt;<code>{{e.repo}}</code>></h2>
         <div>
-          <label class="google red" on-tap="{{loadDemo}}">Demo</label>
-          <label class="google yellow"><a href="/{{e.repo}}">Docs</a></label>
-          <label class="google blue"><a href="https://github.com/{{e.org}}/{{e.repo}}">Github</a></label>
+          <label class="google red" on-tap="loadDemo">Demo</label>
+          <label class="google yellow"><a href="{{e.repo}}">Docs</a></label>
+          <label class="google blue"><a href="{{_computeGithubLink(e)}}">Github</a></label>
         </div>
       </header>
-      <pre>bower install {{e.org}}/{{e.repo}} [--save]</pre>
+      <pre>{{_computeBowerInstallCmd(e)}}</pre>
     </section>
   </template>
 </article>
 <article id="demo">
-  <span hidden?="{{iframeSrc}}"><core-icon icon="arrow-back"></core-icon> Try an element</span>
-  <iframe src="{{iframeSrc}}" hidden?="{{!iframeSrc}}"></iframe>
+  <span hidden="{{iframeSrc}}"><iron-icon icon="arrow-back"></iron-icon> Try an element</span>
+  <iframe src="{{iframeSrc}}" hidden="{{!iframeSrc}}"></iframe>
 </article>
 
-</main>
-
 </template>
+
+</main>
 
 <!--
 <footer>
@@ -87,9 +88,10 @@ var ELEMENTS = [
   {org: 'GoogleWebComponents', repo: 'google-calendar'},
   {org: 'GoogleWebComponents', repo: 'google-castable-video'},
   {org: 'GoogleWebComponents', repo: 'google-hangout-button'},
+  {org: 'GoogleWebComponents', repo: 'google-feeds'},
   {org: 'GoogleWebComponents', repo: 'google-sheets'},
   {org: 'GoogleWebComponents', repo: 'google-url-shortener'},
-  {org: 'GoogleWebComponents', repo: 'google-drive'},
+  // {org: 'GoogleWebComponents', repo: 'google-drive'},
   {org: 'GoogleWebComponents', repo: 'google-signin'},
   {org: 'GoogleWebComponents', repo: 'google-chart'},
   {org: 'GoogleWebComponents', repo: 'google-streetview-pano'},
@@ -110,15 +112,24 @@ ELEMENTS.sort(function (a, b) {
 
 var template = document.querySelector('#t');
 template.elements = ELEMENTS;
+template.iframeSrc = null;
 
 template.getHost = function(org) {
   return '//' + org + '.github.io';
 };
 
-template.loadDemo = function(e, detail, sender) {
-  var element = sender.templateInstance.model.e;
+template.loadDemo = function(e) {
+  var element = e.model.e;
   this.iframeSrc = this.getHost(element.org) + '/' + element.repo +
-                   '/components/' + element.repo + '/demo.html';
+                   '/components/' + element.repo + '/demo/';
+};
+
+template._computeGithubLink = function(element) {
+  return 'https://github.com/' + element.org + '/' + element.repo;
+};
+
+template._computeBowerInstallCmd = function(element) {
+  return 'bower install ' + element.org + '/' + element.repo + ' [--save]';
 };
 
 })();
