@@ -1,6 +1,3 @@
-googlewebcomponents.github.io
-=============================
+The Google Web Components are now on the Polymer Catalog.
 
-![Google Web Components](http://i.imgur.com/TOoZduw.png)
-
-Landing page for [googlewebcomponents.github.io](http://googlewebcomponents.github.io)
+https://elements.polymer-project.org/browse?package=google-web-components
