@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="description" content="A collection of web components for Google APIs and services.">
   <meta itemprop="image" content="http://googlewebcomponents.github.io/img/logo.png">
+  <meta http-equiv="refresh" content="5;URL=https://elements.polymer-project.org/browse?package=google-web-components">
 
   <title>Google Web Components</title>
 
@@ -45,9 +46,14 @@
   </div>
 </header>
 
-<main>
+<main class="layout horizontal center-center">
 
-<template id="t" is="dom-bind">
+
+<h2 style="max-width: 75%;line-height:40px">
+  The Google Web Component element collection is now hosted on the <a href="https://elements.polymer-project.org/browse?package=google-web-components" style="text-decoration:underline">Polymer Element Catalog</a>. Redirecting you there...
+</h2>
+
+<!-- <template id="t" is="dom-bind">
 
 <article id="list">
   <template is="dom-repeat" items="{{elements}}" as="e">
@@ -69,7 +75,7 @@
   <iframe src="{{iframeSrc}}" hidden="{{!iframeSrc}}"></iframe>
 </article>
 
-</template>
+</template> -->
 
 </main>
 
@@ -79,60 +85,60 @@
 <footer> -->
 
 <script>
-(function() {
+// (function() {
 
-var ELEMENTS = [
-  {org: 'GoogleWebComponents', repo: 'google-map'},
-  {org: 'GoogleWebComponents', repo: 'google-apis'},
-  {org: 'GoogleWebComponents', repo: 'google-analytics'},
-  {org: 'GoogleWebComponents', repo: 'google-calendar'},
-  {org: 'GoogleWebComponents', repo: 'google-castable-video'},
-  {org: 'GoogleWebComponents', repo: 'google-hangout-button'},
-  {org: 'GoogleWebComponents', repo: 'google-feeds'},
-  {org: 'GoogleWebComponents', repo: 'google-sheets'},
-  {org: 'GoogleWebComponents', repo: 'google-url-shortener'},
-  // {org: 'GoogleWebComponents', repo: 'google-drive'},
-  {org: 'GoogleWebComponents', repo: 'google-signin'},
-  {org: 'GoogleWebComponents', repo: 'google-chart'},
-  {org: 'GoogleWebComponents', repo: 'google-streetview-pano'},
-  {org: 'GoogleWebComponents', repo: 'google-youtube'},
-  {org: 'GoogleWebComponents', repo: 'google-youtube-upload'},
-];
+// var ELEMENTS = [
+//   {org: 'GoogleWebComponents', repo: 'google-map'},
+//   {org: 'GoogleWebComponents', repo: 'google-apis'},
+//   {org: 'GoogleWebComponents', repo: 'google-analytics'},
+//   {org: 'GoogleWebComponents', repo: 'google-calendar'},
+//   {org: 'GoogleWebComponents', repo: 'google-castable-video'},
+//   {org: 'GoogleWebComponents', repo: 'google-hangout-button'},
+//   {org: 'GoogleWebComponents', repo: 'google-feeds'},
+//   {org: 'GoogleWebComponents', repo: 'google-sheets'},
+//   {org: 'GoogleWebComponents', repo: 'google-url-shortener'},
+//   // {org: 'GoogleWebComponents', repo: 'google-drive'},
+//   {org: 'GoogleWebComponents', repo: 'google-signin'},
+//   {org: 'GoogleWebComponents', repo: 'google-chart'},
+//   {org: 'GoogleWebComponents', repo: 'google-streetview-pano'},
+//   {org: 'GoogleWebComponents', repo: 'google-youtube'},
+//   {org: 'GoogleWebComponents', repo: 'google-youtube-upload'},
+// ];
+//
+// ELEMENTS.sort(function (a, b) {
+//   if (a.repo > b.repo) {
+//     return 1;
+//   }
+//   if (a.repo < b.repo) {
+//     return -1;
+//   }
+//   // a must be equal to b
+//   return 0;
+// });
 
-ELEMENTS.sort(function (a, b) {
-  if (a.repo > b.repo) {
-    return 1;
-  }
-  if (a.repo < b.repo) {
-    return -1;
-  }
-  // a must be equal to b
-  return 0;
-});
-
-var template = document.querySelector('#t');
-template.elements = ELEMENTS;
-template.iframeSrc = null;
-
-template.getHost = function(org) {
-  return '//' + org + '.github.io';
-};
-
-template.loadDemo = function(e) {
-  var element = e.model.e;
-  this.iframeSrc = this.getHost(element.org) + '/' + element.repo +
-                   '/components/' + element.repo + '/demo/';
-};
-
-template._computeGithubLink = function(element) {
-  return 'https://github.com/' + element.org + '/' + element.repo;
-};
-
-template._computeBowerInstallCmd = function(element) {
-  return 'bower install ' + element.org + '/' + element.repo + ' [--save]';
-};
-
-})();
+// var template = document.querySelector('#t');
+// template.elements = ELEMENTS;
+// template.iframeSrc = null;
+//
+// template.getHost = function(org) {
+//   return '//' + org + '.github.io';
+// };
+//
+// template.loadDemo = function(e) {
+//   var element = e.model.e;
+//   this.iframeSrc = this.getHost(element.org) + '/' + element.repo +
+//                    '/components/' + element.repo + '/demo/';
+// };
+//
+// template._computeGithubLink = function(element) {
+//   return 'https://github.com/' + element.org + '/' + element.repo;
+// };
+//
+// template._computeBowerInstallCmd = function(element) {
+//   return 'bower install ' + element.org + '/' + element.repo + ' [--save]';
+// };
+//
+// })();
 
 // G+
 (function() {
